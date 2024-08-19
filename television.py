@@ -1,4 +1,3 @@
-
 class Television:
     MIN_VOLUME = 0
     MAX_VOLUME = 2
@@ -15,14 +14,11 @@ class Television:
     def power(self):
         self.__status = not self.__status
         if not self.__status:
-            self.__muted = False  # Automatically unmute when TV is turned off
+            self.__muted = False
 
     def mute(self):
         if self.__status:
             self.__muted = not self.__muted
-            if self.__muted:
-                self.__actual_volume = self.__volume
-            self.__volume = 0 if self.__muted else self.__actual_volume
 
     def channel_up(self):
         if self.__status:
